@@ -39,6 +39,7 @@ public class MainGame extends GameApplication {
         settings.setTitle("Coin Run");
         settings.setWidth(1200);
         settings.setHeight(700);
+        settings.setCloseConfirmation(true);
     }
 
     //for initializing the game entities
@@ -71,6 +72,14 @@ public class MainGame extends GameApplication {
     @Override
     protected void initInput() {
         Input input = FXGL.getInput();
+
+        input.addAction(new UserAction("Attack") {
+            @Override
+            protected void onAction() {
+
+
+            }
+        }, KeyCode.SHIFT);
 
         input.addAction(new UserAction("Go right") {
             @Override
